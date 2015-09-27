@@ -35,14 +35,14 @@
                                             <Grid x:Name="RootGrid" Width="{TemplateBinding Width}"
                                   Background="Transparent">
                                                 <Grid.Resources>
-                                                    <SolidColorBrush x:Name="HamburgerBackground" Color="#FFD13438" />
+                                                    <!--<SolidColorBrush x:Name="HamburgerBackground" Color="#FFD13438" />
                                                     <SolidColorBrush x:Name="HamburgerForeground" Color="White" />
                                                     <SolidColorBrush x:Name="NavButtonBackground" Color="#FFD13438" />
                                                     <SolidColorBrush x:Name="NavButtonForeground" Color="White" />
                                                     <SolidColorBrush x:Name="NavAreaBackground" Color="White" />
                                                     <SolidColorBrush x:Name="SecondaryBorder" Color="DimGray" />
                                                     <SolidColorBrush x:Name="NavButtonCheckedOverlayBackground" Color="#FF7D1F22" />
-                                                    <SolidColorBrush x:Name="NavButtonHoverOverlayBackground" Color="#FF434343" />
+                                                    <SolidColorBrush x:Name="NavButtonHoverOverlayBackground" Color="#FF434343" />-->
                                                 </Grid.Resources>
                                                 <VisualStateManager.VisualStateGroups>
                                                     <VisualStateGroup x:Name="CommonStates">
