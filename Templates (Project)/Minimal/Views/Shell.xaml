@@ -4,9 +4,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="using:Sample.Views"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:views="using:Sample.Views"
       x:Name="ThisPage" mc:Ignorable="d">
-
     <Grid x:Name="RootGrid">
-
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="NormalVisualState">
@@ -22,29 +20,28 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-
         <Controls:HamburgerMenu x:Name="MyHamburgerMenu" IsEnabled="False">
-
             <Controls:HamburgerMenu.PrimaryButtons>
-                <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:MainPage">
-                    <StackPanel Orientation="Horizontal">
-                        <SymbolIcon Width="48" Height="48" Symbol="Home" />
-                        <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="Home" />
-                    </StackPanel>
-                </Controls:HamburgerButtonInfo>
+                <Controls:SplitViewButton ClearHistory="True" PageType="views:MainPage">
+                    <Controls:SplitViewButton.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Width="48" Height="48" Symbol="Home" />
+                            <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="Home" />
+                        </StackPanel>
+                    </Controls:SplitViewButton.Content>
+                </Controls:SplitViewButton>
             </Controls:HamburgerMenu.PrimaryButtons>
-
             <Controls:HamburgerMenu.SecondaryButtons>
-                <Controls:HamburgerButtonInfo PageType="views:SettingsPage">
-                    <StackPanel Orientation="Horizontal">
-                        <SymbolIcon Width="48" Height="48" Symbol="Setting" />
-                        <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="Settings" />
-                    </StackPanel>
-                </Controls:HamburgerButtonInfo>
+                <Controls:SplitViewButton PageType="views:SettingsPage">
+                    <Controls:SplitViewButton.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Width="48" Height="48" Symbol="Setting" />
+                            <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="Settings" />
+                        </StackPanel>
+                    </Controls:SplitViewButton.Content>
+                </Controls:SplitViewButton>
             </Controls:HamburgerMenu.SecondaryButtons>
-
         </Controls:HamburgerMenu>
-
         <Grid x:Name="BusyScreen" Background="{StaticResource ModalBackground}"
               Visibility="Collapsed" x:DeferLoadStrategy="Lazy">
             <Viewbox Height="32">
@@ -56,7 +53,5 @@
                 </StackPanel>
             </Viewbox>
         </Grid>
-
     </Grid>
-
 </Page>

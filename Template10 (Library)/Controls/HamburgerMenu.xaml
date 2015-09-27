@@ -8,20 +8,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              x:Name="ThisPage" d:DesignHeight="400"
              d:DesignWidth="400" mc:Ignorable="d">
-
     <UserControl.Resources>
         <ResourceDictionary>
-
             <!--  defaults  -->
-            <SolidColorBrush x:Name="HamburgerBackgroundBrush" Color="#FFD13438" />
+            <!--<SolidColorBrush x:Name="HamburgerBackgroundBrush" Color="#FFD13438" />
             <SolidColorBrush x:Name="HamburgerForegroundBrush" Color="White" />
             <SolidColorBrush x:Name="NavButtonBackgroundBrush" Color="#FFD13438" />
             <SolidColorBrush x:Name="NavButtonForegroundBrush" Color="White" />
             <SolidColorBrush x:Name="NavAreaBackgroundBrush" Color="White" />
             <SolidColorBrush x:Name="SecondaryBorderBrush" Color="DimGray" />
             <SolidColorBrush x:Name="NavButtonCheckedOverlayBackgroundBrush" Color="#FF7D1F22" />
-            <SolidColorBrush x:Name="NavButtonHoverOverlayBackgroundBrush" Color="#FF434343" />
-
+            <SolidColorBrush x:Name="NavButtonHoverOverlayBackgroundBrush" Color="#FF434343" />-->
             <Style x:Key="NavButtonStyle" TargetType="ToggleButton">
                 <Setter Property="Height" Value="48" />
                 <Setter Property="MinWidth" Value="48" />
@@ -108,14 +105,13 @@
                 </Setter>
                 <Setter Property="UseSystemFocusVisuals" Value="True" />
             </Style>
-
             <Style x:Key="HamburgerButtonStyle" TargetType="Button">
                 <Setter Property="Height" Value="48" />
                 <Setter Property="HorizontalAlignment" Value="Left" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
-                            <Grid x:Name="RootGrid" Background="{Binding HamburgerBackground, ElementName=ThisPage, FallbackValue=Navy}">
+                            <Grid x:Name="RootGrid" Background="{StaticResource HamburgerBackground}">
                                 <VisualStateManager.VisualStateGroups>
                                     <VisualStateGroup x:Name="CommonStates">
                                         <VisualState x:Name="Normal">
@@ -141,7 +137,7 @@
                                 <Rectangle x:Name="HoverOverlay" Fill="White"
                                            Opacity=".1" Visibility="Collapsed" />
                                 <FontIcon x:Name="ContentPresenter" FontSize="20"
-                                          Foreground="{Binding HamburgerForeground, ElementName=ThisPage, FallbackValue=White}"
+                                          Foreground="{StaticResource HamburgerForeground}"
                                           Glyph="&#xE700;" />
                             </Grid>
                         </ControlTemplate>
@@ -151,7 +147,6 @@
                 <Setter Property="VerticalAlignment" Value="Top" />
                 <Setter Property="Width" Value="48" />
             </Style>
-
             <DataTemplate x:Name="NavButtonTemplate">
                 <RadioButton Width="{Binding PaneWidth, ElementName=ThisPage}" MinWidth="0"
                              MaxWidth="{Binding MaxWidth}"
@@ -175,15 +170,12 @@
                     </RadioButton.Template>
                 </RadioButton>
             </DataTemplate>
-
         </ResourceDictionary>
     </UserControl.Resources>
-
     <Grid x:Name="RootGrid">
-
+        
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
-
                 <VisualStateGroup.Transitions>
                     <VisualTransition GeneratedDuration="0" To="VisualStateWide">
                         <Storyboard>
@@ -197,7 +189,6 @@
                         </Storyboard>
                     </VisualTransition>
                 </VisualStateGroup.Transitions>
-
                 <VisualState x:Name="VisualStateNarrow">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger x:Name="VisualStateNarrowTrigger" MinWindowWidth="0" />
@@ -208,7 +199,6 @@
                         <Setter Target="HamburgerButton.Visibility" Value="Visible" />
                     </VisualState.Setters>
                 </VisualState>
-
                 <VisualState x:Name="VisualStateNormal">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger x:Name="VisualStateNormalTrigger" MinWindowWidth="521" />
@@ -219,7 +209,6 @@
                         <Setter Target="HamburgerButton.Visibility" Value="Visible" />
                     </VisualState.Setters>
                 </VisualState>
-
                 <VisualState x:Name="VisualStateWide">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger x:Name="VisualStateWideTrigger" MinWindowWidth="-1" />
@@ -230,11 +219,10 @@
                         <Setter Target="ShellSplitView.IsPaneOpen" Value="True" />
                     </VisualState.Setters>
                 </VisualState>
-
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-
-        <ContentControl Height="48" Margin="48,0,0,0"
+        <RadioButton x:Name="Radio"/>
+        <!--<ContentControl Height="48" Margin="48,0,0,0"
                         VerticalAlignment="Top" HorizontalContentAlignment="Stretch"
                         Content="{Binding HeaderContent, ElementName=ThisPage}">
             <Interactivity:Interaction.Behaviors>
@@ -249,24 +237,19 @@
                     <Core:ChangePropertyAction PropertyName="Margin" TargetObject="{Binding ElementName=PaneContent}" />
                 </Core:DataTriggerBehavior>
             </Interactivity:Interaction.Behaviors>
-        </ContentControl>
-
+        </ContentControl>-->
         <SplitView x:Name="ShellSplitView" Grid.Column="0"
                    DisplayMode="Inline" OpenPaneLength="220"
                    PaneBackground="Transparent">
-
             <SplitView.Pane>
-
                 <Grid x:Name="PaneContent" Margin="0,48,0,0"
                       Background="{Binding NavAreaBackground, ElementName=ThisPage, FallbackValue=Blue}"
                       BorderBrush="{Binding SecondarySeparator, ElementName=ThisPage, FallbackValue=White}"
                       BorderThickness="0,0,1,0" Tapped="PaneContent_Tapped">
-
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-
                     <Interactivity:Interaction.Behaviors>
                         <Core:DataTriggerBehavior Binding="{Binding Visibility, ElementName=HamburgerButton, Mode=OneWay}" Value="Visible">
                             <Core:ChangePropertyAction PropertyName="Margin" TargetObject="{Binding ElementName=PaneContent}">
@@ -283,18 +266,23 @@
                             </Core:ChangePropertyAction>
                         </Core:DataTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
-
                     <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
-
-                        <ItemsControl ItemTemplate="{StaticResource NavButtonTemplate}" ItemsSource="{Binding PrimaryButtons, ElementName=ThisPage}">
+                        <ItemsControl ItemsSource="{Binding PrimaryButtons, ElementName=ThisPage}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <StackPanel />
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
-
+                            <!--<local:SplitViewButton Width="48" Height="48">
+                                <local:SplitViewButton.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <SymbolIcon Width="48" Height="48" Symbol="Back" />
+                                        <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="Left" />
+                                    </StackPanel>
+                                </local:SplitViewButton.Content>
+                            </local:SplitViewButton>-->
                             <!--  design data  -->
-                            <local:HamburgerButtonInfo>
+                            <!--<local:HamburgerButtonInfo>
                                 <StackPanel Orientation="Horizontal">
                                     <SymbolIcon Width="48" Height="48" Symbol="Back" />
                                     <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="Left" />
@@ -317,35 +305,27 @@
                                     <SymbolIcon Width="48" Height="48" Symbol="Download" />
                                     <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="Bottom" />
                                 </StackPanel>
-                            </local:HamburgerButtonInfo>
-
+                            </local:HamburgerButtonInfo>-->
                         </ItemsControl>
-
                     </ScrollViewer>
-
-                    <ItemsControl Grid.Row="1" ItemTemplate="{StaticResource NavButtonTemplate}" ItemsSource="{Binding SecondaryButtons, ElementName=ThisPage}">
+                    <ItemsControl Grid.Row="1" ItemsSource="{Binding SecondaryButtons, ElementName=ThisPage}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel BorderBrush="{Binding SecondarySeparator, ElementName=ThisPage, FallbackValue=White}" BorderThickness="0,1,0,0" Loaded="SecondaryButtonStackPanel_Loaded" />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
-
                         <!--  designtime  -->
-                        <local:HamburgerButtonInfo>
+                        <!--<local:HamburgerButtonInfo>
                             <StackPanel Orientation="Horizontal">
                                 <SymbolIcon Width="48" Height="48" Symbol="Setting" />
                                 <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="Settings" />
                             </StackPanel>
-                        </local:HamburgerButtonInfo>
-
+                        </local:HamburgerButtonInfo>-->
                     </ItemsControl>
-
                 </Grid>
-
             </SplitView.Pane>
-
         </SplitView>
-
+        
         <Button x:Name="HamburgerButton" Grid.Row="0"
                 Command="{x:Bind HamburgerCommand}" RenderTransformOrigin="0.5,0.5"
                 Style="{StaticResource HamburgerButtonStyle}">
@@ -356,6 +336,5 @@
                 <FontIcon FontSize="20" Glyph="&#xE700;" />
             </StackPanel>
         </Button>
-
     </Grid>
 </UserControl>

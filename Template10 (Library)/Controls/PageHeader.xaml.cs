@@ -150,6 +150,20 @@ namespace Template10.Controls
             DependencyProperty.Register(nameof(BackButtonVisibility), typeof(Visibility),
                 typeof(PageHeader), new PropertyMetadata(Visibility.Visible));
 
+
+
+        public ItemsControl StickyMenuItemsControl
+        {
+            get { return (ItemsControl)GetValue(StickyMenuItemsControlProperty); }
+            set { SetValue(StickyMenuItemsControlProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for StickyMenuItemsControl.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty StickyMenuItemsControlProperty =
+            DependencyProperty.Register("StickyMenuItemsControl", typeof(ItemsControl), typeof(PageHeader), new PropertyMetadata(default(ItemsControl)));
+
+
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

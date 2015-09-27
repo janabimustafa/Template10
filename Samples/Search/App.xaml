@@ -6,16 +6,16 @@
 
         <SolidColorBrush x:Key="ModalBackground" Opacity=".5" Color="{ThemeResource SystemAccentColor}" />
 
-        <Style TargetType="controls:HamburgerMenu">
-            <Setter Property="HamburgerBackground" Value="#FFD13438" />
-            <Setter Property="HamburgerForeground" Value="White" />
-            <Setter Property="NavAreaBackground" Value="#FF2B2B2B" />
-            <Setter Property="NavButtonBackground" Value="#FFD13438" />
-            <Setter Property="NavButtonCheckedOverlayBackground" Value="#FF7D1F22" />
-            <Setter Property="NavButtonForeground" Value="White" />
-            <Setter Property="NavButtonHoverOverlayBackground" Value="#FF434343" />
-            <Setter Property="SecondarySeparator" Value="Gray" />
-        </Style>
+       
+            <SolidColorBrush x:Key="HamburgerBackground" Color="#FFD13438" />
+        <SolidColorBrush x:Key="HamburgerForeground" Color="White" />
+        <SolidColorBrush x:Key="NavAreaBackground" Color="#FF2B2B2B" />
+        <SolidColorBrush x:Key="NavButtonBackground" Color="#FFD13438" />
+        <SolidColorBrush x:Key="NavButtonCheckedOverlayBackground" Color="#FF7D1F22" />
+        <SolidColorBrush x:Key="NavButtonForeground" Color="White" />
+        <SolidColorBrush x:Key="NavButtonHoverOverlayBackground" Color="#FF434343" />
+        <SolidColorBrush x:Key="SecondarySeparator" Color="Gray" />
+       
 
         <Style TargetType="controls:PageHeader">
             <Setter Property="HeaderBackground" Value="Gainsboro" />
