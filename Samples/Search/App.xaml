@@ -1,13 +1,9 @@
 ﻿<common:BootStrapper x:Class="Sample.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:common="using:Template10.Common"
                      xmlns:controls="using:Template10.Controls" xmlns:local="using:Sample">
-
     <Application.Resources>
-
         <SolidColorBrush x:Key="ModalBackground" Opacity=".5" Color="{ThemeResource SystemAccentColor}" />
-
-       
-            <SolidColorBrush x:Key="HamburgerBackground" Color="#FFD13438" />
+        <SolidColorBrush x:Key="HamburgerBackground" Color="#FFD13438" />
         <SolidColorBrush x:Key="HamburgerForeground" Color="White" />
         <SolidColorBrush x:Key="NavAreaBackground" Color="#FF2B2B2B" />
         <SolidColorBrush x:Key="NavButtonBackground" Color="#FFD13438" />
@@ -15,14 +11,7 @@
         <SolidColorBrush x:Key="NavButtonForeground" Color="White" />
         <SolidColorBrush x:Key="NavButtonHoverOverlayBackground" Color="#FF434343" />
         <SolidColorBrush x:Key="SecondarySeparator" Color="Gray" />
-       
-
-        <Style TargetType="controls:PageHeader">
-            <Setter Property="HeaderBackground" Value="Gainsboro" />
-            <Setter Property="HeaderForeground" Value="#FF2B2B2B" />
-        </Style>
-
-
+        <SolidColorBrush x:Key="PageHeaderBackground" Color="Gainsboro" />
+        <SolidColorBrush x:Key="PageHeaderForeground" Color="#FF2B2B2B" />
     </Application.Resources>
-
 </common:BootStrapper>

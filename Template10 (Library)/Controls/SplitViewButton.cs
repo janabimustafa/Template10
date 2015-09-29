@@ -19,6 +19,7 @@ using Template10.Mvvm;
 namespace Template10.Controls
 {
     [TemplatePart(Name = RadioButtonName, Type = typeof(RadioButton))]
+    [ContentProperty(Name = nameof(Content))]
     public sealed class SplitViewButton : ContentControl, IBindable
     {
         private const string RadioButtonName = "radioButton";
@@ -41,7 +42,6 @@ namespace Template10.Controls
         {
             _radioButton.Tapped += _radioButton_Tapped;
             _radioButton.Loaded += _radioButton_Loaded;
-            _radioButton.CommandParameter = this;
         }
 
         private void _radioButton_Loaded(object sender, RoutedEventArgs e)
@@ -53,6 +53,7 @@ namespace Template10.Controls
         private void _radioButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.RaiseChecked(e);
+            this.RaiseTapped(e);
             e.Handled = true;
         }
 

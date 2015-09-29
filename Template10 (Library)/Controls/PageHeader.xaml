@@ -9,17 +9,14 @@
     xmlns:Behaviors="using:Template10.Behaviors" 
     xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d" MinHeight="48" d:DesignWidth="400" x:Name="ThisPage">
-
-    <UserControl.Resources>
-        <SolidColorBrush x:Name="HeaderBackgroundBrush" Color="Gainsboro" />
-        <SolidColorBrush x:Name="HeaderForegroundBrush" Color="Black" />
-    </UserControl.Resources>
-
+    <!--<UserControl.Resources>
+        <SolidColorBrush x:Key="PageHeaderBackground" Color="Gainsboro" />
+        <SolidColorBrush x:Key="PageHeaderForeground" Color="Black" />
+    </UserControl.Resources>-->
     <CommandBar x:Name="HeaderCommandBar" DataContext="{Binding ElementName=ThisPage}" 
-                Background="{x:Bind HeaderBackground, FallbackValue=Blue}"
-                Foreground="{x:Bind HeaderForeground, FallbackValue=White}"
+                Background="{ThemeResource PageHeaderBackground}"
+                Foreground="{ThemeResource PageHeaderForeground}"
                 Grid.Column="0" Grid.ColumnSpan="2" ClosedDisplayMode="Compact">
-
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="VisualStateNarrow">
@@ -34,12 +31,10 @@
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger x:Name="VisualStateNormalTrigger" MinWindowWidth="521" />
                     </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                    </VisualState.Setters>
+                    <VisualState.Setters></VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        
         <CommandBar.Content>
             <StackPanel Orientation="Horizontal" Height="48" VerticalAlignment="Center">
                 <Rectangle x:Name="NarrowSpacer" Width="48" Visibility="Collapsed" IsHitTestVisible="False" />
@@ -56,5 +51,4 @@
             </StackPanel>
         </CommandBar.Content>
     </CommandBar>
-
 </UserControl>

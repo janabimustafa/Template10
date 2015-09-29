@@ -65,45 +65,45 @@ namespace Template10.Controls
 
         #endregion
 
-        #region Styles
+        //#region Styles
 
-        public SolidColorBrush HeaderBackground
-        {
-            get { return HeaderBackgroundBrush; }
-            set
-            {
-                SetValue(HeaderBackgroundProperty, HeaderBackgroundBrush = value);
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HeaderBackground)));
-                if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
-                {
-                    var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
-                    statusBar.BackgroundColor = value?.Color;
-                }
-            }
-        }
-        public static readonly DependencyProperty HeaderBackgroundProperty =
-             DependencyProperty.Register(nameof(HeaderBackground), typeof(SolidColorBrush),
-                 typeof(PageHeader), new PropertyMetadata(null, (d, e) => { (d as PageHeader).HeaderBackground = (SolidColorBrush)e.NewValue; }));
+        //public SolidColorBrush HeaderBackground
+        //{
+        //    get { return HeaderBackgroundBrush; }
+        //    set
+        //    {
+        //        SetValue(HeaderBackgroundProperty, HeaderBackgroundBrush = value);
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HeaderBackground)));
+        //        if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+        //        {
+        //            var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+        //            statusBar.BackgroundColor = value?.Color;
+        //        }
+        //    }
+        //}
+        //public static readonly DependencyProperty HeaderBackgroundProperty =
+        //     DependencyProperty.Register(nameof(HeaderBackground), typeof(SolidColorBrush),
+        //         typeof(PageHeader), new PropertyMetadata(null, (d, e) => { (d as PageHeader).HeaderBackground = (SolidColorBrush)e.NewValue; }));
 
-        public SolidColorBrush HeaderForeground
-        {
-            get { return HeaderForegroundBrush; }
-            set
-            {
-                SetValue(HeaderForegroundProperty, HeaderForegroundBrush = value);
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HeaderForeground)));
-                if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
-                {
-                    var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
-                    statusBar.ForegroundColor = value?.Color;
-                }
-            }
-        }
-        public static readonly DependencyProperty HeaderForegroundProperty =
-              DependencyProperty.Register(nameof(HeaderForeground), typeof(SolidColorBrush),
-                  typeof(PageHeader), new PropertyMetadata(null, (d, e) => { (d as PageHeader).HeaderForeground = (SolidColorBrush)e.NewValue; }));
+        //public SolidColorBrush HeaderForeground
+        //{
+        //    get { return HeaderForegroundBrush; }
+        //    set
+        //    {
+        //        SetValue(HeaderForegroundProperty, HeaderForegroundBrush = value);
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HeaderForeground)));
+        //        if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+        //        {
+        //            var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+        //            statusBar.ForegroundColor = value?.Color;
+        //        }
+        //    }
+        //}
+        //public static readonly DependencyProperty HeaderForegroundProperty =
+        //      DependencyProperty.Register(nameof(HeaderForeground), typeof(SolidColorBrush),
+        //          typeof(PageHeader), new PropertyMetadata(null, (d, e) => { (d as PageHeader).HeaderForeground = (SolidColorBrush)e.NewValue; }));
 
-        #endregion
+        //#endregion
 
         public IObservableVector<ICommandBarElement> PrimaryCommands
         {

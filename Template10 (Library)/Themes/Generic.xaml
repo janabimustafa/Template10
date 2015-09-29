@@ -11,9 +11,10 @@
                              MaxWidth="{TemplateBinding MaxWidth}"
                              HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                              Command="{TemplateBinding NavCommand}"
+                             CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                              GroupName="Nav"
-                             IsChecked="{TemplateBinding IsChecked}"
-                             IsEnabled="{TemplateBinding  IsEnabled}"
+                             IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked, Mode=TwoWay}"
+                             IsEnabled="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsEnabled, Mode=TwoWay}"
                              Content="{TemplateBinding Content}"
                              Visibility="{TemplateBinding Visibility}">
                         <RadioButton.Style>
@@ -34,16 +35,6 @@
                                         <ControlTemplate TargetType="RadioButton">
                                             <Grid x:Name="RootGrid" Width="{TemplateBinding Width}"
                                   Background="Transparent">
-                                                <Grid.Resources>
-                                                    <!--<SolidColorBrush x:Name="HamburgerBackground" Color="#FFD13438" />
-                                                    <SolidColorBrush x:Name="HamburgerForeground" Color="White" />
-                                                    <SolidColorBrush x:Name="NavButtonBackground" Color="#FFD13438" />
-                                                    <SolidColorBrush x:Name="NavButtonForeground" Color="White" />
-                                                    <SolidColorBrush x:Name="NavAreaBackground" Color="White" />
-                                                    <SolidColorBrush x:Name="SecondaryBorder" Color="DimGray" />
-                                                    <SolidColorBrush x:Name="NavButtonCheckedOverlayBackground" Color="#FF7D1F22" />
-                                                    <SolidColorBrush x:Name="NavButtonHoverOverlayBackground" Color="#FF434343" />-->
-                                                </Grid.Resources>
                                                 <VisualStateManager.VisualStateGroups>
                                                     <VisualStateGroup x:Name="CommonStates">
                                                         <VisualState x:Name="Normal">
@@ -106,131 +97,21 @@
                                                     </VisualStateGroup>
                                                 </VisualStateManager.VisualStateGroups>
                                                 <Grid x:Name="CheckedOverlay" Visibility="Collapsed">
-                                                    <Rectangle Fill="{ThemeResource NavButtonCheckedOverlayBackground}" />
+                                                    <Rectangle Fill="{Binding Source={ThemeResource NavButtonCheckedOverlayBackground}, FallbackValue=#FF7D1F22}" />
                                                 </Grid>
                                                 <Rectangle x:Name="PressedOverlay" Fill="White" Opacity=".2" Visibility="Collapsed" />
-                                                <Rectangle x:Name="HoverOverlay" Fill="{ThemeResource NavButtonHoverOverlayBackground}" Visibility="Collapsed" />
+                                                <Rectangle x:Name="HoverOverlay" Fill="{Binding Source={ThemeResource NavButtonHoverOverlayBackground}, FallbackValue=#FF434343}" Visibility="Collapsed" />
                                                 <ContentPresenter x:Name="ContentPresenter" HorizontalAlignment="Left"
                                                   VerticalAlignment="Stretch" HorizontalContentAlignment="Left"
                                                   VerticalContentAlignment="Center" Background="Transparent"
                                                   Content="{TemplateBinding Content}" FontSize="16"
-                                                  Foreground="{ThemeResource NavButtonForeground}" />
+                                                  Foreground="{Binding Source={ThemeResource NavButtonForeground}, FallbackValue=White }" />
                                             </Grid>
                                         </ControlTemplate>
                                     </Setter.Value>
                                 </Setter>
                             </Style>
                         </RadioButton.Style>
-                        <!--<RadioButton.Template>
-                            <ControlTemplate>
-                                <ToggleButton MaxWidth="{Binding MaxWidth, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                          HorizontalAlignment="{Binding HorizontalAlignment, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                          Command="{Binding Command, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                          CommandParameter="{Binding CommandParameter, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                          Content="{Binding Tag, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                          IsChecked="{Binding IsChecked, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}">
-                                    <ToggleButton.Style>
-                                        <Style TargetType="ToggleButton">
-                                            -->
-                        <!--<Setter Property="Height" Value="{TemplateBinding Height}" />
-                                <Setter Property="MinWidth" Value="48" />-->
-                        <!--
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="ToggleButton">
-                                                        <Grid x:Name="RootGrid" Width="{TemplateBinding Width}"
-                                  Background="Transparent">
-                                                            <Grid.Resources>
-                                                                <SolidColorBrush x:Name="HamburgerBackground" Color="#FFD13438" />
-                                                                <SolidColorBrush x:Name="HamburgerForeground" Color="White" />
-                                                                <SolidColorBrush x:Name="NavButtonBackground" Color="#FFD13438" />
-                                                                <SolidColorBrush x:Name="NavButtonForeground" Color="White" />
-                                                                <SolidColorBrush x:Name="NavAreaBackground" Color="White" />
-                                                                <SolidColorBrush x:Name="SecondaryBorder" Color="DimGray" />
-                                                                <SolidColorBrush x:Name="NavButtonCheckedOverlayBackground" Color="#FF7D1F22" />
-                                                                <SolidColorBrush x:Name="NavButtonHoverOverlayBackground" Color="#FF434343" />
-                                                            </Grid.Resources>
-                                                            <VisualStateManager.VisualStateGroups>
-                                                                <VisualStateGroup x:Name="CommonStates">
-                                                                    <VisualState x:Name="Normal">
-                                                                        <Storyboard>
-                                                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                                        </Storyboard>
-                                                                    </VisualState>
-                                                                    <VisualState x:Name="PointerOver">
-                                                                        <VisualState.Setters>
-                                                                            <Setter Target="HoverOverlay.Visibility" Value="Visible" />
-                                                                        </VisualState.Setters>
-                                                                        <Storyboard>
-                                                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                                        </Storyboard>
-                                                                    </VisualState>
-                                                                    <VisualState x:Name="Pressed">
-                                                                        <VisualState.Setters>
-                                                                            <Setter Target="PressedOverlay.Visibility" Value="Visible" />
-                                                                        </VisualState.Setters>
-                                                                        <Storyboard>
-                                                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                                        </Storyboard>
-                                                                    </VisualState>
-                                                                    <VisualState x:Name="Disabled" />
-                                                                    <VisualState x:Name="Checked">
-                                                                        <VisualState.Setters>
-                                                                            <Setter Target="CheckedOverlay.Visibility" Value="Visible" />
-                                                                        </VisualState.Setters>
-                                                                        <Storyboard>
-                                                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                                        </Storyboard>
-                                                                    </VisualState>
-                                                                    <VisualState x:Name="CheckedPointerOver">
-                                                                        <VisualState.Setters>
-                                                                            <Setter Target="CheckedOverlay.Visibility" Value="Visible" />
-                                                                            <Setter Target="HoverOverlay.Visibility" Value="Visible" />
-                                                                        </VisualState.Setters>
-                                                                        <Storyboard>
-                                                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                                        </Storyboard>
-                                                                    </VisualState>
-                                                                    <VisualState x:Name="CheckedPressed">
-                                                                        <VisualState.Setters>
-                                                                            <Setter Target="CheckedOverlay.Visibility" Value="Visible" />
-                                                                            <Setter Target="PressedOverlay.Visibility" Value="Visible" />
-                                                                        </VisualState.Setters>
-                                                                        <Storyboard>
-                                                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                                        </Storyboard>
-                                                                    </VisualState>
-                                                                    <VisualState x:Name="CheckedDisabled">
-                                                                        <VisualState.Setters>
-                                                                            <Setter Target="CheckedOverlay.Visibility" Value="Visible" />
-                                                                        </VisualState.Setters>
-                                                                    </VisualState>
-                                                                    <VisualState x:Name="Indeterminate" />
-                                                                    <VisualState x:Name="IndeterminatePointerOver" />
-                                                                    <VisualState x:Name="IndeterminatePressed" />
-                                                                    <VisualState x:Name="IndeterminateDisabled" />
-                                                                </VisualStateGroup>
-                                                            </VisualStateManager.VisualStateGroups>
-                                                            <Grid x:Name="CheckedOverlay" Visibility="Collapsed">
-                                                                <Rectangle Fill="{ThemeResource NavButtonCheckedOverlayBackground}" />
-                                                            </Grid>
-                                                            <Rectangle x:Name="PressedOverlay" Fill="White" Opacity=".2" Visibility="Collapsed" />
-                                                            <Rectangle x:Name="HoverOverlay" Fill="{ThemeResource NavButtonHoverOverlayBackground}" Visibility="Collapsed" />
-                                                            <ContentPresenter x:Name="ContentPresenter" HorizontalAlignment="Left"
-                                                  VerticalAlignment="Stretch" HorizontalContentAlignment="Left"
-                                                  VerticalContentAlignment="Center" Background="Transparent"
-                                                  Content="{TemplateBinding Content}" FontSize="16"
-                                                  Foreground="{ThemeResource NavButtonForeground}" />
-                                                        </Grid>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                            <Setter Property="UseSystemFocusVisuals" Value="True" />
-                                        </Style>
-                                    </ToggleButton.Style>
-                                </ToggleButton>
-                            </ControlTemplate>
-                        </RadioButton.Template>-->
                     </RadioButton>
                 </ControlTemplate>
             </Setter.Value>

@@ -129,116 +129,6 @@ namespace Template10.Controls
         public static readonly DependencyProperty SecondaryButtonOrientationProperty =
             DependencyProperty.Register(nameof(SecondaryButtonOrientation), typeof(Orientation),
                 typeof(HamburgerMenu), new PropertyMetadata(Orientation.Vertical));
-        //#region Style
-
-
-
-        //public SolidColorBrush HamburgerBackground
-        //{
-        //    get { return HamburgerBackgroundBrush; }
-        //    set
-        //    {
-        //        SetValue(HamburgerBackgroundProperty, HamburgerBackgroundBrush = value);
-        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HamburgerBackground)));
-        //    }
-        //}
-        //public static readonly DependencyProperty HamburgerBackgroundProperty =
-        //    DependencyProperty.Register(nameof(HamburgerBackground), typeof(SolidColorBrush),
-        //        typeof(HamburgerMenu), new PropertyMetadata(null, (d, e) => { (d as HamburgerMenu).HamburgerBackground = (SolidColorBrush)e.NewValue; }));
-
-        //public SolidColorBrush HamburgerForeground
-        //{
-        //    get { return HamburgerForegroundBrush; }
-        //    set
-        //    {
-        //        SetValue(HamburgerForegroundProperty, HamburgerForegroundBrush = value);
-        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HamburgerForeground)));
-        //    }
-        //}
-        //public static readonly DependencyProperty HamburgerForegroundProperty =
-        //      DependencyProperty.Register(nameof(HamburgerForeground), typeof(SolidColorBrush),
-        //          typeof(HamburgerMenu), new PropertyMetadata(null, (d, e) => { (d as HamburgerMenu).HamburgerForeground = (SolidColorBrush)e.NewValue; }));
-
-        //public SolidColorBrush NavAreaBackground
-        //{
-        //    get { return NavAreaBackgroundBrush; }
-        //    set
-        //    {
-        //        SetValue(NavAreaBackgroundProperty, NavAreaBackgroundBrush = value);
-        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HamburgerForeground)));
-        //    }
-        //}
-        //public static readonly DependencyProperty NavAreaBackgroundProperty =
-        //      DependencyProperty.Register(nameof(NavAreaBackground), typeof(SolidColorBrush),
-        //          typeof(HamburgerMenu), new PropertyMetadata(null, (d, e) => { (d as HamburgerMenu).NavAreaBackground = (SolidColorBrush)e.NewValue; }));
-
-        //public SolidColorBrush NavButtonBackground
-        //{
-        //    get { return (SolidColorBrush)NavButtonBackgroundBrush; }
-        //    set
-        //    {
-        //        SetValue(NavButtonBackgroundProperty, NavButtonBackgroundBrush = value);
-        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NavButtonBackground)));
-        //    }
-        //}
-        //public static readonly DependencyProperty NavButtonBackgroundProperty =
-        //    DependencyProperty.Register(nameof(NavButtonBackground), typeof(SolidColorBrush),
-        //        typeof(HamburgerMenu), new PropertyMetadata(null, (d, e) => { (d as HamburgerMenu).NavButtonBackground = (SolidColorBrush)e.NewValue; }));
-
-        //public SolidColorBrush NavButtonForeground
-        //{
-        //    get { return NavButtonForegroundBrush; }
-        //    set
-        //    {
-        //        SetValue(NavButtonForegroundProperty, NavButtonForegroundBrush = value);
-        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HamburgerForeground)));
-        //    }
-        //}
-        //public static readonly DependencyProperty NavButtonForegroundProperty =
-        //      DependencyProperty.Register(nameof(NavButtonForeground), typeof(SolidColorBrush),
-        //          typeof(HamburgerMenu), new PropertyMetadata(null, (d, e) => { (d as HamburgerMenu).NavButtonForeground = (SolidColorBrush)e.NewValue; }));
-
-        //public SolidColorBrush SecondarySeparator
-        //{
-        //    get { return SecondaryBorderBrush; }
-        //    set
-        //    {
-        //        SetValue(SecondarySeparatorProperty, SecondaryBorderBrush = value);
-        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HamburgerForeground)));
-        //    }
-        //}
-        //public static readonly DependencyProperty SecondarySeparatorProperty =
-        //      DependencyProperty.Register("SecondarySeparator", typeof(SolidColorBrush),
-        //          typeof(HamburgerMenu), new PropertyMetadata(null, (d, e) => { (d as HamburgerMenu).SecondarySeparator = (SolidColorBrush)e.NewValue; }));
-
-        //public SolidColorBrush NavButtonCheckedOverlayBackground
-        //{
-        //    get { return NavButtonCheckedOverlayBackgroundBrush; }
-        //    set
-        //    {
-        //        SetValue(NavButtonCheckedOverlayBackgroundProperty, NavButtonCheckedOverlayBackgroundBrush = value);
-        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NavButtonCheckedOverlayBackground)));
-        //    }
-        //}
-        //public static readonly DependencyProperty NavButtonCheckedOverlayBackgroundProperty =
-        //      DependencyProperty.Register(nameof(NavButtonCheckedOverlayBackground), typeof(SolidColorBrush),
-        //          typeof(HamburgerMenu), new PropertyMetadata(null, (d, e) => { (d as HamburgerMenu).NavButtonCheckedOverlayBackground = (SolidColorBrush)e.NewValue; }));
-
-
-        //public SolidColorBrush NavButtonHoverOverlayBackground
-        //{
-        //    get { return NavButtonHoverOverlayBackgroundBrush; }
-        //    set
-        //    {
-        //        SetValue(NavButtonHoverOverlayBackgroundProperty, NavButtonHoverOverlayBackgroundBrush = value);
-        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NavButtonHoverOverlayBackground)));
-        //    }
-        //}
-        //public static readonly DependencyProperty NavButtonHoverOverlayBackgroundProperty =
-        //      DependencyProperty.Register(nameof(NavButtonHoverOverlayBackground), typeof(SolidColorBrush),
-        //          typeof(HamburgerMenu), new PropertyMetadata(null, (d, e) => { (d as HamburgerMenu).NavButtonHoverOverlayBackground = (SolidColorBrush)e.NewValue; }));
-
-        //#endregion
 
         public SplitViewButton Selected
         {
@@ -451,16 +341,7 @@ namespace Template10.Controls
             HamburgerCommand.Execute(null);
         }
 
-        private void NavButton_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
-        {
-            var radio = sender as RadioButton;
-            var info = radio.DataContext as SplitViewButton;
-            info.RaiseTapped(e);
 
-            // why is it handled?
-            // so we don't re-select
-            e.Handled = true;
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

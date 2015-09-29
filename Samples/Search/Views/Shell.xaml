@@ -9,9 +9,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:sample="using:Sample.Controls" xmlns:views="using:Sample.Views"
       x:Name="ThisPage" mc:Ignorable="d">
-
     <Grid x:Name="RootGrid">
-
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="NormalVisualState">
@@ -39,45 +37,34 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-
         <Controls:HamburgerMenu x:Name="MyHamburgerMenu" IsEnabled="False" SecondaryButtonOrientation="Horizontal">
-
             <Controls:HamburgerMenu.PrimaryButtons>
-
-                <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:MainPage">
+                <Controls:SplitViewButton ClearHistory="True" PageType="views:MainPage">
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Width="48" Height="48" Symbol="Home" />
                         <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="Home" />
                     </StackPanel>
-                </Controls:HamburgerButtonInfo>
-
-                <Controls:HamburgerButtonInfo Checked="SearchChecked" Unchecked="SearchUnchecked">
+                </Controls:SplitViewButton>
+                <Controls:SplitViewButton Checked="SearchChecked" Unchecked="SearchUnchecked">
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Width="48" Height="48" Symbol="Find" />
                         <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="Search" />
                     </StackPanel>
-                </Controls:HamburgerButtonInfo>
-
+                </Controls:SplitViewButton>
             </Controls:HamburgerMenu.PrimaryButtons>
-
             <Controls:HamburgerMenu.SecondaryButtons>
-
-                <Controls:HamburgerButtonInfo MaxWidth="48" Tapped="LoginTapped">
+                <Controls:SplitViewButton  HorizontalAlignment="Left" MaxWidth="48" Tapped="LoginTapped">
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Width="48" Height="48" Symbol="Contact" />
                     </StackPanel>
-                </Controls:HamburgerButtonInfo>
-
-                <Controls:HamburgerButtonInfo MaxWidth="48">
+                </Controls:SplitViewButton>
+                <Controls:SplitViewButton HorizontalAlignment="Left" MaxWidth="48">
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Width="48" Height="48" Symbol="Setting" />
                     </StackPanel>
-                </Controls:HamburgerButtonInfo>
-
+                </Controls:SplitViewButton>
             </Controls:HamburgerMenu.SecondaryButtons>
-
         </Controls:HamburgerMenu>
-
         <Grid x:Name="BusyScreen" Background="{StaticResource ModalBackground}"
               Visibility="Collapsed" x:DeferLoadStrategy="Lazy">
             <Viewbox Height="32">
@@ -89,7 +76,6 @@
                 </StackPanel>
             </Viewbox>
         </Grid>
-
         <Grid x:Name="SearchScreen" Margin="48,0,0,0"
               Background="{StaticResource ModalBackground}" Visibility="Collapsed"
               x:DeferLoadStrategy="Lazy">
@@ -99,9 +85,7 @@
                     <CompositeTransform />
                 </UserControl.RenderTransform>
             </sample:SearchPart>
-
         </Grid>
-
         <Grid x:Name="LoginScreen" Background="{StaticResource ModalBackground}"
               Visibility="Collapsed" x:DeferLoadStrategy="Lazy">
             <sample:LoginPart x:Name="loginPart" Margin="48,0,0,0"
@@ -111,9 +95,6 @@
                     <CompositeTransform />
                 </UserControl.RenderTransform>
             </sample:LoginPart>
-
         </Grid>
-
     </Grid>
-
 </Page>

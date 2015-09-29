@@ -42,7 +42,7 @@ namespace Sample.Views
 
         private void LoginTapped(object sender, RoutedEventArgs e)
         {
-            (sender as HamburgerButtonInfo).IsChecked = false;
+            (sender as SplitViewButton).IsChecked = false;
             VisualStateManager.GoToState(this, LoginVisualState.Name, true);
         }
 
