@@ -19,15 +19,15 @@
                     <VisualState.Setters>
                         <Setter Target="BusyRing.(ProgressRing.IsActive)" Value="True" />
                         <Setter Target="BusyScreen.(UIElement.Visibility)" Value="Visible" />
-                        <Setter Target="MyHamburgerMenu.(UIElement.IsEnabled)" Value="True" />
+                        <!--<Setter Target="MyHamburgerMenu.(UIElement.IsEnabled)" Value="True" />-->
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <Controls:HamburgerMenu x:Name="MyHamburgerMenu">
+        <!--<Controls:HamburgerMenu x:Name="MyHamburgerMenu">
 
-            <Controls:HamburgerMenu.PrimaryButtons>
+            --><!--<Controls:HamburgerMenu.PrimaryButtons>
                 <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:MainPage">
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Width="48" Height="48" Symbol="Home" />
@@ -43,9 +43,9 @@
                         <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" Text="Settings" />
                     </StackPanel>
                 </Controls:HamburgerButtonInfo>
-            </Controls:HamburgerMenu.SecondaryButtons>
+            </Controls:HamburgerMenu.SecondaryButtons>--><!--
 
-        </Controls:HamburgerMenu>
+        </Controls:HamburgerMenu>-->
 
         <Grid x:Name="BusyScreen" Background="{StaticResource ModalBackground}" Visibility="Collapsed" x:DeferLoadStrategy="Lazy">
             <Viewbox Height="32">

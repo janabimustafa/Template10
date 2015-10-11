@@ -55,9 +55,9 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <Controls:HamburgerMenu x:Name="MyHamburgerMenu" SecondaryButtonOrientation="Horizontal">
+        <Controls:HamburgerMenuUC x:Name="MyHamburgerMenu" SecondaryButtonOrientation="Horizontal">
 
-            <Controls:HamburgerMenu.PrimaryButtons>
+            <Controls:HamburgerMenuUC.PrimaryButtons>
 
                 <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:MainPage">
                     <StackPanel Orientation="Horizontal">
@@ -73,9 +73,9 @@
                     </StackPanel>
                 </Controls:HamburgerButtonInfo>
 
-            </Controls:HamburgerMenu.PrimaryButtons>
+            </Controls:HamburgerMenuUC.PrimaryButtons>
 
-            <Controls:HamburgerMenu.SecondaryButtons>
+            <Controls:HamburgerMenuUC.SecondaryButtons>
 
                 <Controls:HamburgerButtonInfo MaxWidth="48" Tapped="LoginTapped">
                     <StackPanel Orientation="Horizontal">
@@ -89,9 +89,9 @@
                     </StackPanel>
                 </Controls:HamburgerButtonInfo>
 
-            </Controls:HamburgerMenu.SecondaryButtons>
+            </Controls:HamburgerMenuUC.SecondaryButtons>
 
-        </Controls:HamburgerMenu>
+        </Controls:HamburgerMenuUC>
 
         <Grid x:Name="BusyScreen" Background="{StaticResource ModalBackground}" Visibility="Collapsed" x:DeferLoadStrategy="Lazy">
             <Viewbox Height="32">

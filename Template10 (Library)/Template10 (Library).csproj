@@ -142,8 +142,10 @@
     <Compile Include="Common\ObservableItemCollection.cs" />
     <Compile Include="Controls\CustomTitleBar.cs" />
     <Compile Include="Controls\HamburgerButtonInfo.cs" />
+    <Compile Include="Controls\HamburgerMenu.cs" />
     <Compile Include="Controls\PageHeader.cs" />
     <Compile Include="Controls\Resizer.cs" />
+    <Compile Include="Controls\SplitViewButton.cs" />
     <Compile Include="Converters\DateTimeOffsetConverter.cs" />
     <Compile Include="Converters\StringFormatConverter.cs" />
     <Compile Include="Services\NavigationService\INavigationService.cs" />
@@ -154,8 +156,8 @@
     <Compile Include="Utils\ColorUtils.cs" />
     <Compile Include="Utils\MonitorUtil.cs" />
     <Compile Include="Utils\XamlUtil.cs" />
-    <Compile Include="Controls\HamburgerMenu.xaml.cs">
-      <DependentUpon>HamburgerMenu.xaml</DependentUpon>
+    <Compile Include="Controls\HamburgerMenuUC.xaml.cs">
+      <DependentUpon>HamburgerMenuUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ValueWhenConverter.cs" />
     <Compile Include="Mvvm\BindableBase.cs" />
@@ -179,7 +181,7 @@
     <Content Include="Properties\Template10Library.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\HamburgerMenu.xaml">
+    <Page Include="Controls\HamburgerMenuUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -23,7 +23,7 @@ namespace Sample.Views
         {
             Instance = this;
             InitializeComponent();
-            MyHamburgerMenu.NavigationService = navigationService;
+            //MyHamburgerMenu.NavigationService = navigationService;
             VisualStateManager.GoToState(Instance, Instance.NormalVisualState.Name, true);
         }
 

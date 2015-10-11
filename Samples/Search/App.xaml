@@ -12,7 +12,7 @@
 
         <SolidColorBrush x:Key="ModalBackground" Opacity=".5" Color="{ThemeResource SystemAccentColor}" />
 
-        <Style TargetType="controls:HamburgerMenu">
+        <Style TargetType="controls:HamburgerMenuUC">
             <Setter Property="AccentColor" Value="{ThemeResource SystemAccentColor}" />
         </Style>
 

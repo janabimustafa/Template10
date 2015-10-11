@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Template10.Controls.HamburgerMenu"
+﻿<UserControl x:Class="Template10.Controls.HamburgerMenuUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
